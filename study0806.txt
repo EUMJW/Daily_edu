@@ -1,0 +1,50 @@
+딥러닝은 최소의 loss값을 구하기 위한 최적의 가중치를 찾는 과정
+acc은 모델에 따라 신뢰성이 적을수도 있음
+
+딥러닝의 기본 WX + B 각 노드에 적용되는 함수
+
+sklearn을 사용하면 loss함수로 sparse_categorical_crossentropy를 사용할때
+라벨 0부터 시작하지 않아 출력층의 node갯수를 category 갯수만큼 넣을수있다
+
+
+PCA == Flatten() ?????
+학습속도에 영향 X
+
+
+
+cross validation
+데이터의 양이 한정적일때 validation을 나누어 사용하면 해당 데이터를 학습에 사용하지 않아 아깝다
+전체데이터를 n개로 나눠어 그중 하나를 validation으로 사용할때
+학습을 n번하면서 validation으로 지정하는 부분을 바꿔가면서 학습한다
+
+
+체크포인트, 얼리스타핑
+보통 validation loss값을 기준으로 
+
+modelcheckpoint는
+save_best_only = True 하면 loss가 최소를 갱신할때마다 실행
+
+earlystopping은
+patience값 만큼 loss값이 최소를 갱신하지 못하면 실행
+
+
+fit 할때 metrics를 넣어도 학습속도에 영향을 주지않음
+evaluate 하면 loss와 metrics에 넣은값들이 모두 나옴
+loss = model.evaluate 로 하면
+loss가 list로 받아옴
+
+loss, acc = model.evaluate 하면 각각 받아옴
+
+
+sigmoid : 0~1 이진분류
+softmax : [0.1,0.2,0.1,0.6] 같은모양 다중클래스분류
+회귀의 경우 마지막노드 dense에 활성화함수 쓰지않아서 linear로 냅둠
+
+Dense모델 activation 기본값 : linear
+LSTM activation 기본값 : tanh
+
+
+
+
+공부할것 - 디시즌트리, 렌덤포레스트, litegbm 등등 머신러닝 알고리즘, lstm param, keras, functional model
+머신러닝 알고리즘을 딥러닝에 엮어 하이퍼파라미터 결정하는 방법
