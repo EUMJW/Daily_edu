@@ -1,5 +1,5 @@
 from keras.models import Model
-from keras.layers import Dense, LSTM, Conv2D, Activation, Dropout, Flatten, MaxPooling2D
+from keras.layers import Dense, LSTM, Conv2D, Activation, Dropout, Flatten, MaxPooling2D, Input
 from keras.callbacks import EarlyStopping,ModelCheckpoint
 from keras.datasets import mnist
 from keras.utils import np_utils

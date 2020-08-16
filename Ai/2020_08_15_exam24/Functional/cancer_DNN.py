@@ -1,5 +1,5 @@
 from keras.models import Model
-from keras.layers import Dense, LSTM, Conv2D, Activation, Dropout, Flatten, MaxPooling2D
+from keras.layers import Dense, LSTM, Conv2D, Activation, Dropout, Flatten, MaxPooling2D, Input
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
