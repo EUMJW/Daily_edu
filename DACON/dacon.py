@@ -11,18 +11,12 @@ from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint,ReduceLROn
 from keras.layers.merge import concatenate
 from keras import optimizers
 
-from google.colab import files
-files.upload()
 
 
-# GOOGLE COLAB을 사용하여 진행
-
-! unzip data.zip
+import dacon_dataset
 
 
-train = pd.read_csv('train.csv')
-test = pd.read_csv('test.csv')
-
+train = dacon_dataset.train
 
 x_train = train.iloc[:,3:]
 x_train = np.array(x_train).reshape(-1,28,28,1)/255
@@ -122,11 +116,10 @@ model.compile(optimizer='adam', loss = 'categorical_crossentropy', metrics = ['a
 model.fit([x_train, x_letter_train], y_train, batch_size = 16, epochs = 500, validation_split = 0.1, callbacks=[es, mc])
 
 
-test = pd.read_csv('test.csv')
-submission = pd.read_csv('submission.csv')
+
 
 # 서브밋
-x_test = test.iloc[:,2:]
+x_test = dacon_dataset.test.iloc[:,2:]
 x_test = np.array(x_test).reshape(-1,28,28,1)/255
 
 x_letter_test = pd.get_dummies(test.letter)
@@ -142,6 +135,8 @@ lst=[]
 for i in range(len(pre)):
   lst.append(np.argmax(pre[i]))
 
+
+submission = dacon_dataset.submission
 
 submission.digit = lst
 submission.to_csv('submission.csv', mode='w', index=False)
