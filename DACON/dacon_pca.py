@@ -21,10 +21,6 @@ x_letter_train = np.array(x_letter_train)
 pca = PCA()
 x_train = np.array(train.iloc[:,3:])
 
-# x_train의 pixel값이 175를 넘는것은 1, 이하는 0으로
-
-x_train[x_train<=175]=0
-x_train[x_train>0]=1
 
 pca.fit(x_train)
 cumsum = np.cumsum(pca.explained_variance_ratio_)
@@ -89,4 +85,4 @@ model.fit([pca_xtrain, x_letter_train], y_train, batch_size = 16, epochs = 500, 
 
 
 
-# 결과 - val_loss: 1.6402 - val_acc: 0.4390 전처리 후 조금 나아졌다
+# 결과 - val_loss: 2.2 - val_acc: 0.36 성능이 좋지 못하다
