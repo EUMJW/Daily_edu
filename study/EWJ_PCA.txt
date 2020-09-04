@@ -1,0 +1,28 @@
+# 일단 500차원까지 pca를 만든다
+pca = PCA(n_components=500)
+
+# pca에 x_train 데이터를 넣어준다
+pca.fit(x_train)
+
+# 첫번째부터 500번째 차원까지 각각의 주성분이 x_train에 대해서 얼마나 설명하는지
+# 리스트의 형태로 출력된다.
+print(pca.explained_variance_ratio_)
+
+# cumsum (누적합) 을 사용하여 각 리스트를 누적하여 더해준다
+# 예를들어 pca.explained_variance_ratio_ 가 [ 0.3, 0.2, 0.1, 0.1, 0,1 ....] 이였다면
+# [0.3, 0.5, 0.6, 0.7, 0.8 ....] 의 형태로 나온다
+cumsum = np.cumsum(pca.explained_variance_ratio_)
+
+
+# (cumsum >= 0.95) 를 통해서 cumsum의 리스트 value가 0.95보다 낮으면 False를, 높으면 True로 바뀐다
+# ex) [False, False, False, False, True, True, True, True ....] 이런식으로
+# np.argmax는 원래 가장높은 값의 인덱스를 불러오나,
+# False와 True로 되어있는 리스트에 대해서는 가장 처음나온 True의 인덱스를 반환한다.
+# argmax는 인덱스 값이므로 0부터 시작하기때문에 +1 해주면 d가 0.95를 넘는 누적치를 갖는 pca차원수를 말하게된다 
+d = np.argmax( cumsum >= 0.95) +1
+
+# 위에서 구한 d로 다시 PCA를 한다
+pca = PCA(n_components=d)
+
+# x_train을 pca를 통해 차원축소한 값을 pca_xtrain으로 저장하였다.
+pca_xtrain = pca.fit_transform(x_train)
