@@ -1,0 +1,19 @@
+결측치와 이상치의 xgboost 와의 관계
+
+Sparsity-aware Split Finding - 값이 결측치면 최적의 방향으로 자동학습
+트리모델의 경우 값의 크기가 아닌 순서를 활용하여 학습하기 때문에 이상치에 대해 강건함
+
+===========================
+
+interpolate 사용법 완전 정리
+
+판다스
+df.interpolate( method= '기준 컬럼')
+
+다차원일경우
+from scipy.interpolate import LinearNDInterpolator
+interpolatedData = np.array([None, None, None, None])
+interpolatedData[0] = interp1d(data[:,[0]],data,axis=0)
+interpolatedData[1] = interp1d(data[:,[1]],data,axis=1)
+interpolatedData[2] = interp1d(data[:,[2]],data,axis=2)
+interpolatedData[3] = interp1d(data[:,[3]],data,axis=3)

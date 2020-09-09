@@ -1,0 +1,25 @@
+XGBModel(max_depth=3, 		정수 / 트리모델의 최대깊이
+	learning_rate=0.1, 		소수 / 학습률
+	n_estimators=100, 		정수 / 트리모델의 갯수
+	verbosity=1, 		0~3 / 0 : 무출력 , 3 : 디버그
+	silent=None, 		T,F  / 구성중 메세지 출력
+	objective='reg:linear', 	'binary:logistic' / 목표함수 
+	booster='gbtree', 		gbtree, gblinear, dart / 트리모델, 선형회귀, 드롭아웃추가
+	n_jobs=1, 		정수 / 병렬 스레드 수, 높을수록 속도빨라짐
+	nthread=None, 		n_jobs랑 동일. -1이면 알아서 최대
+	gamma=0, 		0~1 / 최소 손실 감소. 클수록 보수적
+	min_child_weight=1, 	소수 / 자식에게 필요한 가중치의 최소합계                   ?
+	max_delta_step=0, 		정수 / 각 트리의 가중치 추정을 허용하는 최대 델타단계   ?
+	subsample=1, 		훈련에 사용될 무작위 샘플링 비율
+	colsample_bytree=1, 		각 트리마다 시행
+	colsample_bylevel=1, 		각 레벨마다 시행
+	colsample_bynode=1, 		각 분할마다 시행
+	reg_alpha=0, 		0~1 / L1 정규화. 클수록 보수적
+	reg_lambda=1, 		0~1 / L2 정규화. 클수록 보수적
+	scale_pos_weight=1, 	소수 / 가중치 음수양수 균형
+	base_score=0.5, 		0~1 / 인스턴스 초기 예측점수
+	random_state=0, 		시드
+	seed=None, 		시드
+	missing=None, 		결측치는 None으로 표시
+	importance_type='gain', 	피처임포턴스 속성관련
+	**kwargs)			*args : 값만 순서대로  // **kwargs : 변수명과 값을 딕셔너리 형태로
