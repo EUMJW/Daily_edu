@@ -1,0 +1,47 @@
+f = open('data.txt','r')
+line = f.readline()
+
+lst=[]
+while line:
+    a=line.split()
+    lst.append(a)
+    line=f.readline()
+    
+f.close()
+
+
+
+dic ={}
+
+for i in range(len(lst)):
+    for j in range(1,len(lst[i])):
+        try:
+            dic[str(lst[i][j])] +=1
+        except:
+            dic[str(lst[i][j])] =1
+
+print(dic)
+
+
+del_list=[]
+for i in dic:
+    if dic[i] < 2:
+        del_list.append(i)
+        
+
+
+for i in del_list:
+    del dic[i]  
+
+
+print(dic)
+
+
+lst2=[]
+for i in dic:
+    for j in dic:
+        if i != j and (j,i) not in lst2 :
+            lst2.append((i,j))
+                
+print(lst2)
+
