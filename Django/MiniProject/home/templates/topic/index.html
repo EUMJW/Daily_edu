@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>topic/index.html</title>
+</head>
+<body>
+    <h1>토론방 목록</h1>
+    <a href="/topic/add_topic">토론방 추가</a>
+
+    <hr/>
+
+    <table border="1">
+        <tr>
+            <th>방번호</th>
+            <th>토론주제</th>
+            <th>작성글 수</th>
+        </tr>
+        {% for obj in topic_list %}
+        <tr>
+            <td>{{obj.content_topic_idx}}</td>
+            <td><a href="/content/{{obj.content_topic_idx}}">{{obj.content_topic_idx__topic_name}}</a></td>
+            <td>{{obj.content_cnt}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+
+

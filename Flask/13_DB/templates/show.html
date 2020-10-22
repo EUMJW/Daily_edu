@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show.html</title>
+</head>
+<body>
+    <h1>결과보기</h1>
+
+    {% for row in result %}
+    <h3>data1 : {{row[0]}}</h3>
+    <h3>data2 : {{row[1]}}</h3>
+    <h3>data3 : {{row[2]}}</h3>
+    <hr/>
+    {% endfor %}
+</body>
+</html>

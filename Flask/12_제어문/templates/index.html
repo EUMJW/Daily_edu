@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index.html</title>
+</head>
+<body>
+    <h1>제어문</h1>
+
+    {# if 문은 html 코드를 응답 결과에 포함 시킬것인가를 결정#}
+    {% if a1 == 10 %}
+    <h3> a1은 10입니다.</h3>
+    {% else %}
+    <h3> a1은 10이 아닙니다.</h3>
+    {% endif %}
+
+    <hr/>
+
+    {# for 문은 내부의 html 코드를 몇번 포함 시킬것인가를 결정#}
+    {% for value in a2%}
+    <h3> a2: {{value}}</h3>
+    {% endfor %}
+</body>
+</html>

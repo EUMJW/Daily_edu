@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index.html</title>
+    <!-- css class 작성 -->
+    <style>
+        .c1 {
+            background-color : red;
+            color : blue;
+        }
+        .c2 {
+            background-color : blue;
+            color : red;
+        }
+        .c3 {
+            background-color : yellow;
+        }
+        .c4{
+            color :red;
+        }
+        .c5{
+            color :blue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>CSS</h1>
+    <!-- css : 배치된 HTML 태그들이 보여질 모양을 설정한다 -->
+    <!-- inline 방식 : 설정하고자 하는 HTML 태그에 직접 설정하는 방식-->
+    <div style="color:red">
+        <h3 style="background-color:green">문자열1</h3>
+        <h3 style="color:blue">문자열2</h3>
+        <h3 style="background-color:green; color:blue">문자열3</h3>
+    </div>
+
+
+    <hr/>
+
+    <!-- css class: 상단의 style 태그안에 미리 정의해 놓고 태그에 적용 -->
+
+    <div class="c1">
+        <h3>문자열4</h3>
+        <h3 class="c2">문자열5</h3>
+        <h3>문자열6</h3>
+    </div>
+
+    <hr/>
+    <!-- 하나의 태그에 다수의 css class를 적용할 수 있다-->
+
+    <h3 class="c3 c4">문자열 7</h3>
+    <h3 class="c3 c5">문자열 8</h3>
+    <!-- 적용 순서는 class 속성에 넣어준 순서가 아니고
+        각각 css class를 작성한 순서대로 적용 -->
+    <h3 class="c4 c5">문자열 9</h3>
+    <h3 class="c5 c4">문자열 10</h3>
+    <h3 class="c2 c5">문자열10-2</h3>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>content_main.html</title>
+</head>
+<body>
+    <h1>토론하기</h1>
+
+    <h3>{{topic[0]}}</h3>
+    <hr/>
+    <a href="/topic_main">토론방 목록 보기</a><br/>
+    <form action="/add_content_pro" method="post">
+        <input type="hidden" name="topic_idx" value="{{topic_idx}}"/>
+        글 작성 : <input type="text" name="topic_content"/><br/>
+        <button type="submit">작성</button>
+    </form>
+    <hr/>
+    {% for content in content_list %}
+    <h3>{{content[0]}}</h3>
+    {% endfor %}
+
+</body>
+</html>

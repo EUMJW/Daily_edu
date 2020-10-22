@@ -1,0 +1,41 @@
+장고 쉽게 정리되어 있는 사이트
+http://pythonstudy.xyz/Python/Django
+
+https://blog.naver.com/ourdream20/221967739748
+
+[django 라이브러리 설치]
+1. 아나콘다 프롬프트를 실행한다.
+2. pip install django
+
+[django 프로젝트 생성]
+1. 파이참에서 가상 환경으로 프로젝트를 생성한다.
+2. sqlite3 관련 파일들을 c:\windows\system32 폴더에 복사해야 한다.
+3. 파이참 하단에서 Terminal을 띄워준다.
+C:\Users\ilifo\anaconda3\Scripts\django-admin startproject 프로젝트이름
+C:\Users\ilifo\anaconda3\Scripts\django-admin startproject mysite
+
+4. 생성된 프로젝트를 가동한다.
+- mysite로 이동한다. 
+  cd mysite
+- 실행한다.
+  python manage.py runserver 포트번호
+  python manage.py runserver 8080
+
+5. 앱을 생성한다.
+- python manage.py startapp 앱이름
+  python manage.py startapp home
+
+6. views.py 파일을 작성한다.
+   views.py : 요청에 따라 호출되는 함수를 작성하는 파일
+
+7. mysite에 있는 settings.py 파일
+   settings.py : 프로젝트 전체에 관련된 설정
+   INSTALLED_APPS에 현재 앱을 추가시켜준다. 
+
+8. mysite에 있는 urls.py 파일
+   - 요청 주소에 따라 호출될 함수를 셋팅한다.
+
+
+
+
+

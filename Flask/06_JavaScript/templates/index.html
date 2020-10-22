@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index.html</title>
+
+    <script>
+        //자바스크립트의 함수
+        function f1(){
+            var t2 = document.getElementById('test2')
+            t2.innerHTML = '<h3>함수에서 셋팅한 문자열</h3>'
+        }
+
+        //문서에 있는 모든 HTML 태그의 객체가 생성되면 자동으로 호출된다.
+        window.onload = function(){
+            // id가 test1인 태그를 가져온다.
+            var t1 = document.getElementById('test1')
+            // t1에 HTML 코드를 셋팅한다.
+            t1.innerHTML = '<h3>셋팅된 문자열</h3>'
+
+            //함수 호출
+            f1()
+        }
+        function set_test3(){
+            var t3 = document.getElementById('test3')
+            t3.innerHTML = '<h3>이벤트를 통해 생성된 문자열</h3>'
+        }
+
+    </script>
+</head>
+<body>
+    <h1>06_JavaScript</h1>
+
+    <div id="test1">
+
+    </div>
+
+    <div id="test2">
+
+    </div>
+    <button type="button" onclick="set_test3()">버튼</button>
+    <div id="test3">
+
+    </div>
+</body>
+</html>

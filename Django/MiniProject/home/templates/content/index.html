@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>content/index.html</title>
+</head>
+<body>
+    <h1>토론하기</h1>
+    <h3>주제 : {{topic_model.0.topic_name}}</h3>
+    <hr/>
+    <a href="/topic">토론방 목록 보기</a>
+    <hr/>
+    <form action="/content/add_content_pro" method="post">
+        <input type="hidden" name="content_topic_idx" value="{{content_topic_idx}}"/>
+        글 작성 : <input type="text" name="content_text"/><br/>
+        <button type="submit">작성</button>
+        {% csrf_token %}
+    </form>
+    <hr/>
+
+    {% for obj in content_list %}
+    <h3>{{obj.content_text}}</h3>
+    {% endfor %}
+
+</body>
+
+
+
+
+
+
+
+
+

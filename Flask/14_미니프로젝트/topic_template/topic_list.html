@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>topic_list.html</title>
+</head>
+<body>
+    <h1>토론방 목록</h1>
+
+    <a href="/add_topic">토론방 추가</a>
+    <hr/>
+
+    <table border="1">
+        <tr>
+            <th>방번호</th>
+            <th>토론주제</th>
+            <th>작성글 수</th>
+        </tr>
+        {% for topic in topic_list %}
+        <tr>
+            <td>{{topic[0]}}</td>
+            <td><a href="/content_main/{{topic[0]}}">{{topic[1]}}</a></td>
+            {% if topic[2] == None %}
+            <td>0</td>
+            {% else %}
+            <td>{{topic[2]}}</td>
+            {% endif%}
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

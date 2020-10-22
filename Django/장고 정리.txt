@@ -1,0 +1,33 @@
+http://pythonstudy.xyz/python/django
+
+-django 라이브러리 설치
+1. 아나콘다 프롬프트 실행
+2. pip install django
+
+django 프로젝트 생성
+1. 파이참에서 가상환경으로 프로젝트 생성
+2. sqlite3 관련 파일들을 c:\windows\system32 폴더에 복사해야한다.
+3. 파이참 하단에서 terminal을 띄워준다
+
+C:\Users\user\anaconda3\Scripts\django-admin startproject 프로젝트이름
+C:\Users\user\anaconda3\Scripts\django-admin startproject mysite
+
+4. 생성된 프로젝트를 가동한다
+-mysite로 이동한다.
+cd mysite
+python manage.py runserver 포트번호
+python manage.py runserver 80
+
+
+5. 앱을 생성한다.
+python manage.py startapp 앱이름
+python manage.py startapp home
+
+6. views.py 작성
+views.py : 요청에 따라 호출되는 함수를 작성한다.
+
+7.mysite에 있는 settings.py 파일
+settings.py : 프로젝트 전체에 관련된 설정
+INSTALLED_APPS에 현재 앱을 추가시켜준다.
+
+8. mysite에 있는 urls.py파일

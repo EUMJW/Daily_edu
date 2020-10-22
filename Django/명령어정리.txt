@@ -1,0 +1,39 @@
+[파일 정리]
+settings.py : 프로젝트 전체 설정(데이터베이스 접속 정보, 웹앱 정보 등)
+urls.py : 발생된 요청에 따라 호출될 함수를 관리
+models.py : 데이터베이스에 있는 테이블을 관리
+views.py : 요청에 발생했을 때 호출될 함수를 구현한다.
+             응답결과로 전달할 html을 생성해서 반환한다.
+
+[명령어 및 프로젝트 생성순서]
+1. 프로젝트를 생성한다.
+   C:\Users\ilifo\anaconda3\Scripts\django-admin startproject project_name
+
+2. 프로젝트로 이동한다.
+   cd project_name
+
+3. 웹 앱을 생성한다.
+   python manage.py startapp app_name
+
+4. 생성한 앱을 project_name/settings.py파일에 등록해준다.
+   INSTALLED_APPS 에 등록한다.
+
+5. 생성한 웹앱에 요청시 호출될 함수를 만들어준다.
+   views.py 파일에 함수를 만들어준다.
+
+6. project_name/urls.py파일에 요청 주소와 호출될 함수를 등록해준다.
+
+7. 프로젝트 실행
+   python manage.py runserver 포트번호
+
+[데이터데이터 관련]
+1. Model을 작성한다.
+2. 작성한 내용을 반영할 수 있는 코드를 생성한다.
+  python manage.py makemigrations
+3. 반영한다.
+  python manage.py migrate
+
+
+
+
+
